@@ -3,16 +3,18 @@ import { defineConfig } from '@rslib/core';
 export default defineConfig({
   lib: [
     {
-      bundle: false,
+      bundle: true,
       format: 'esm',
       syntax: 'esnext',
       dts: false,
-      autoExternal: true
+      autoExternal: true,
+      
     },
   ],
-  source: {
-    entry: {
-      index: './src/**',
+  output: {
+    externals: {
+      vue: 'vue',
+      axios: 'axios'
     },
-  },
+  }
 });
