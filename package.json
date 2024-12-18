@@ -1,18 +1,27 @@
 {
-  "name": "rspack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "rslib-project",
+  "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "rspack serve",
-    "build": "RUST_BACKTRACE=full rspack build"
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch"
+  },
   "devDependencies": {
-    "@rspack/cli": "1.1.6",
-    "@rspack/core": "1.1.6"
+    "@rslib/core": "^0.1.4",
+    "@types/node": "^22.8.1",
+    "axios": "^1.7.9",
+    "vue": "^3.5.13",
+    "typescript": "^5.6.3"
   }
 }
