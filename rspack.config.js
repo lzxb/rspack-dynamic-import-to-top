@@ -1,5 +1,8 @@
 export default {
     entry: './src/index.js',
+    output: {
+        library: 'modern-module'
+    },
     experiments: {
         outputModule: true
     },
@@ -8,7 +11,7 @@ export default {
         chunkLoading: 'import',
         module: true
     },
-    externalsType: 'module-import',
+    externalsType: 'import',
     externals: ['vue', 'axios'],
     optimization: {
         minimize: false
